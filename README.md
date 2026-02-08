@@ -4,24 +4,24 @@
 
 ## 📖 About
 
-This repository serves as a living knowledge base for my journey in **Computational Physics** and **Research Software Engineering**.
+This repository serves as a living knowledge base documenting my journey toward becoming a well-rounded scientist, supported by computational tools.
 
-As researchers, we often start by hacking together Jupyter Notebooks to get a quick result. But as simulations grow in complexity, “hacky” code becomes a liability. It becomes hard to debug, hard to reproduce, and impossible to scale.
+As researchers, we often start by hacking together code scripts to get a quick result. But as simulations grow in complexity, “hacky” code becomes a liability. It becomes hard to debug, hard to reproduce, and impossible to scale.
 
-The goal of this handbook is to document the transition from **“running cells”** to **“building software.”**
+The goal of this handbook is to document the transition from informal computational experimentation to systematic software engineering practices.
 
 ## 🎯 Objectives
 
 1. **Reproducibility**  
-   Move from manual execution in notebooks to automated, version-controlled scripts.
-
-2. **Robustness**  
+   Move from manually executed, undocumented scripts to automated, version-controlled workflows.
+   
+3. **Robustness**  
    Learn tools (debuggers, unit tests, linters) that catch errors before they waste days of compute time.
 
-3. **Efficiency**  
+4. **Efficiency**  
    Master the terminal and CLI workflow to run simulations on any machine (from laptop to cluster).
 
-4. **Clarity**  
+5. **Clarity**  
    Write code that my *future self* can read and understand six months from now.
 
 ## 🗂️ Structure
