@@ -1,5 +1,5 @@
 import numpy as np
-from physics_engine.operators import get_pauli_matrices
+from src.operators import get_pauli_matrices
 
 def evolve(state, time):
     """

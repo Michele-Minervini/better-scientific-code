@@ -1,7 +1,7 @@
 import numpy as np
 
 # IMPORTING from our folder
-from physics_engine.dynamics import evolve
+from src.dynamics import evolve
 
 def main():
     print("--- Experiment Start ---")
