@@ -25,3 +25,13 @@ my_project/
     ├── hamiltonian.py     # Definitions of H
     ├── solver.py          # The time-evolution logic
     └── utils.py           # Helper functions (pauli matrices, partial trace)
+```
+
+### Pro-Tip: The .gitignore File
+You never want to commit your heavy simulation data to GitHub.
+So, create a file named .gitignore in your root and add:
+```text
+data/
+*.npz
+*.csv
+__pycache__/
