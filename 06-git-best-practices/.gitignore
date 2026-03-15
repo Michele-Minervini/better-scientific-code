@@ -1,0 +1,32 @@
+# 1. Python Caches
+__pycache__/
+*.py[cod]
+*~
+
+# 2. Virtual Environments
+venv/
+env/
+.conda/
+.venv/
+
+# 3. VS Code / IDE Settings
+.vscode/
+.idea/
+.DS_Store
+
+# 4. Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# 5. Simulation Data & Logs
+# NEVER push large data files to GitHub!
+data/
+outputs/
+logs/
+*.csv
+*.dat
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.pdf
+*.png
