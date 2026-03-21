@@ -1,0 +1,25 @@
+# This is the Conda equivalent. It specifies the name of the environment right at the top, making it foolproof for anyone cloning your repository. The dependencies are listed under the `dependencies` section, and you can specify exact versions to ensure reproducibility. Conda will handle the installation of these packages and their dependencies, making it easier to manage complex environments.
+
+name: qml_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # The exact Python version ensures syntax compatibility
+  - python=3.11
+  
+  # Core scientific stack optimized for the OS
+  - numpy=1.26.4
+  - scipy=1.13.0
+  - pandas=2.2.1
+  
+  # Dev tools
+  - pytest=8.0.0
+  - tqdm=4.66.2
+  
+  # Some quantum packages are better installed via pip 
+  # inside the conda environment
+  - pip
+  - pip:
+    - qiskit==1.0.2
+    - pennylane==0.35.1
