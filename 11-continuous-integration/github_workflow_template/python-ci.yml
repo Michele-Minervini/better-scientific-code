@@ -1,0 +1,52 @@
+# This is the actual configuration file that tells GitHub's servers what to do. You can copy this file into the real `.github/workflows/` directory of any Python project.
+
+# The name of the workflow as it will appear on GitHub
+name: Python Checks
+
+# 1. WHEN should this run?
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+# 2. WHERE and WHAT should it do?
+jobs:
+  build-and-test:
+    # Run this on the latest version of Ubuntu Linux
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step A: Download your repository's code onto the server
+    - name: Check out repository
+      uses: actions/checkout@v4
+
+    # Step B: Install Python
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+        # Optional: caches pip downloads so future runs are faster
+        cache: 'pip'
+
+    # Step C: Install your dependencies and the testing tools
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        # Install the tools
+        pip install pytest ruff
+        # If you have a requirements file, install the rest:
+        # pip install -r requirements.txt
+
+    # Step D: Run the Linter (Ruff)
+    - name: Check formatting and syntax with Ruff
+      run: |
+        # This will fail the check if the code is messy or has unused imports
+        ruff check .
+        ruff format --check .
+
+    # Step E: Run the Unit Tests (Pytest)
+    - name: Run tests with pytest
+      run: |
+        # This will fail the check if any math is broken
+        pytest
