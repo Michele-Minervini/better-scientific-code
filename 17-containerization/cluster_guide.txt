@@ -1,0 +1,40 @@
+====================================================================
+APPTAINER (SINGULARITY) CHEAT SHEET FOR SUPERCOMPUTERS
+====================================================================
+
+Once you have built your Docker container and pushed it to Docker Hub 
+(e.g., `docker push username/quantum-sim:latest`), here is how you run 
+it on a cluster.
+
+1. PULL THE IMAGE
+SSH into your cluster's login node and convert the Docker image into 
+an Apptainer image (.sif file):
+
+    apptainer pull quantum-sim.sif docker://username/quantum-sim:latest
+
+This creates a single file `quantum-sim.sif`. That file IS your entire 
+operating system and codebase. 
+
+2. INTERACTIVE DEBUGGING
+Want to poke around inside the container on the cluster to make sure 
+files are where they should be? Open a shell inside it:
+
+    apptainer shell quantum-sim.sif
+
+3. SUBMITTING VIA SLURM
+Instead of calling `python script.py` in your Slurm script, you execute 
+the container. 
+
+Modify your submit_job.sh (from Lesson 15) to look like this:
+
+    #!/bin/bash
+    #SBATCH --job-name=container_sweep
+    #SBATCH --nodes=1
+    #SBATCH --cpus-per-task=8
+    #SBATCH --time=02:00:00
+
+    # Load Apptainer
+    module load apptainer
+
+    # Run your python script INSIDE the container!
+    apptainer exec quantum-sim.sif python main_simulation.py --beta 1.5
