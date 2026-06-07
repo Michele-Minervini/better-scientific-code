@@ -1,0 +1,34 @@
+[build-system]
+# This tells pip what tool to use to compile your package. Hatchling is the modern default.
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "qchem_algorithms"
+version = "0.1.0"
+description = "A high-performance toolkit for quantum simulation of spin systems and phase properties."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Michele Minervini", email = "research@example.com" }
+]
+
+# These are the packages your code needs to survive. 
+# When someone pip installs your package, pip will automatically download these too!
+dependencies = [
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "h5py>=3.8.0",
+]
+
+# Optional dependencies (e.g., for people who want to run your tests)
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.3.0",
+]
+
+# You can even put your Linter configurations in here!
+[tool.ruff]
+line-length = 88
