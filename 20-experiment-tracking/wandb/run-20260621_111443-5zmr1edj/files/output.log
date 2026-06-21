@@ -1,0 +1,13 @@
+🚀 Starting optimization for 4 qubits...
+   Epoch 010 | Energy: 3.9556 | Fidelity: 0.3935
+   Epoch 020 | Energy: 3.5664 | Fidelity: 0.6321
+   Epoch 030 | Energy: 3.0614 | Fidelity: 0.7769
+   Epoch 040 | Energy: 2.6206 | Fidelity: 0.8647
+   Epoch 050 | Energy: 2.7727 | Fidelity: 0.9179
+   Epoch 060 | Energy: 2.0169 | Fidelity: 0.9502
+   Epoch 070 | Energy: 1.4159 | Fidelity: 0.9698
+   Epoch 080 | Energy: 0.6354 | Fidelity: 0.9817
+   Epoch 090 | Energy: 0.1948 | Fidelity: 0.9889
+   Epoch 100 | Energy: -0.2478 | Fidelity: 0.9933
+✅ Training complete.
+[34m[1mwandb[0m: [33mWARNING[0m Symlinked 1 file into the W&B run directory; call wandb.save again to sync new files.

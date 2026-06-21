@@ -1,0 +1,24 @@
+2026-06-21 11:14:43,253 INFO    MainThread:97957 [wandb_setup.py:_flush():81] Current SDK version is 0.27.2
+2026-06-21 11:14:43,253 INFO    MainThread:97957 [wandb_setup.py:_flush():81] Configure stats pid to 97957
+2026-06-21 11:14:43,253 INFO    MainThread:97957 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-06-21 11:14:43,254 INFO    MainThread:97957 [wandb_init.py:setup_run_log_directory():723] Logging user logs to /Users/micheleminervini/Desktop/better-scientific-code/20-experiment-tracking/wandb/run-20260621_111443-5zmr1edj/logs/debug.log
+2026-06-21 11:14:43,254 INFO    MainThread:97957 [wandb_init.py:setup_run_log_directory():724] Logging internal logs to /Users/micheleminervini/Desktop/better-scientific-code/20-experiment-tracking/wandb/run-20260621_111443-5zmr1edj/logs/debug-internal.log
+2026-06-21 11:14:43,254 INFO    MainThread:97957 [wandb_init.py:init():766] calling init triggers
+2026-06-21 11:14:43,254 INFO    MainThread:97957 [wandb_init.py:init():771] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.01, 'n_qubits': 4, 'epochs': 100, 'optimizer': 'Adam', 'ansatz_depth': 3, '_wandb': {}}
+2026-06-21 11:14:43,254 INFO    MainThread:97957 [wandb_init.py:init():814] starting backend
+2026-06-21 11:14:43,254 INFO    MainThread:97957 [wandb_init.py:init():829] sending inform_init request
+2026-06-21 11:14:43,608 INFO    MainThread:97957 [wandb_init.py:init():834] backend started and connected
+2026-06-21 11:14:43,621 INFO    MainThread:97957 [wandb_init.py:init():904] updated telemetry
+2026-06-21 11:14:43,639 INFO    MainThread:97957 [wandb_init.py:init():927] communicating run to backend with 90.0 second timeout
+2026-06-21 11:14:44,006 INFO    MainThread:97957 [wandb_init.py:init():972] starting run threads in backend
+2026-06-21 11:14:44,259 INFO    MainThread:97957 [wandb_run.py:_console_start():2523] atexit reg
+2026-06-21 11:14:44,259 INFO    MainThread:97957 [wandb_run.py:_redirect():2373] redirect: wrap_raw
+2026-06-21 11:14:44,259 INFO    MainThread:97957 [wandb_run.py:_redirect():2442] Wrapping output streams.
+2026-06-21 11:14:44,259 INFO    MainThread:97957 [wandb_run.py:_redirect():2465] Redirects installed.
+2026-06-21 11:14:44,260 INFO    MainThread:97957 [wandb_init.py:init():1010] run started, returning control to user process
+2026-06-21 11:14:49,686 INFO    MainThread:97957 [wandb_run.py:_finish():2285] finishing run micheleminervini3-cornell-university/research-software-handbook/5zmr1edj
+2026-06-21 11:14:49,686 INFO    MainThread:97957 [wandb_run.py:_atexit_cleanup():2490] got exitcode: 0
+2026-06-21 11:14:49,687 INFO    MainThread:97957 [wandb_run.py:_restore():2472] restore
+2026-06-21 11:14:49,687 INFO    MainThread:97957 [wandb_run.py:_restore():2478] restore done
+2026-06-21 11:14:50,835 INFO    MainThread:97957 [wandb_run.py:_footer_sync_info():3891] logging synced files
