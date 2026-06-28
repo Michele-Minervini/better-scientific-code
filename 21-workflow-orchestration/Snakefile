@@ -1,0 +1,61 @@
+# Snakefile
+
+# Define the final target files we want the pipeline to produce.
+# Snakemake will automatically determine the steps needed to create them.
+rule all:
+    input:
+        "results/qbm_training_loss.pdf",
+        "results/final_model_parameters.h5"
+
+# -------------------------------------------------------------------------
+# STEP 1: Generate Data (Python)
+# -------------------------------------------------------------------------
+rule generate_training_data:
+    output:
+        "data/hamiltonian_dataset.h5"
+    params:
+        n_samples=5000,
+        qubits=6
+    shell:
+        """
+        python scripts/generate_hamiltonians.py \
+            --samples {params.n_samples} \
+            --qubits {params.qubits} \
+            --out {output}
+        """
+
+# -------------------------------------------------------------------------
+# STEP 2: Train the Model (Julia)
+# Depends on the HDF5 file from Step 1.
+# -------------------------------------------------------------------------
+rule train_qbm:
+    input:
+        "data/hamiltonian_dataset.h5"
+    output:
+        weights="results/final_model_parameters.h5",
+        metrics="results/training_metrics.csv"
+    threads: 8  # Snakemake can manage core allocation
+    shell:
+        """
+        julia scripts/train_qbm.jl \
+            --data {input} \
+            --out_weights {output.weights} \
+            --out_metrics {output.metrics} \
+            --threads {threads}
+        """
+
+# -------------------------------------------------------------------------
+# STEP 3: Plot Results (Python)
+# Depends on the metrics CSV from Step 2.
+# -------------------------------------------------------------------------
+rule plot_loss_curve:
+    input:
+        "results/training_metrics.csv"
+    output:
+        "results/qbm_training_loss.pdf"
+    shell:
+        """
+        python scripts/plot_figures.py \
+            --in_csv {input} \
+            --out_pdf {output}
+        """
